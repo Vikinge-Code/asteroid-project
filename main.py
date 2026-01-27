@@ -7,6 +7,8 @@ def main():
     print("Starting Asteroids with pygame version: 2.6.1")
     print("Screen width: 1280\nScreen height: 720")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.time.Clock()
+    
     while True:
         log_state()
         for event in pygame.event.get():
