@@ -33,7 +33,7 @@ def main():
     while True:
         log_state()
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == pygame.QUIT: 
                 return
         
         screen.fill("black") #fills screen color
@@ -46,6 +46,13 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+        
+        for asteroid in asteroids:
+            for shot in shots:
+                if shot.collides_with(asteroid):
+                    log_event("asteroid_sahot")
+                    shot.kill()
+                    asteroid.split()
                 
         #log_event("player_hit")
         #print("Game over!")
